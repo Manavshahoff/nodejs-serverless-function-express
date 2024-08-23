@@ -7,6 +7,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
+app.get('/api/index', (req, res) => {
+  res.send('Hello there');
+});
+
+
 app.post("/", async (req, res) => {
   const { email, password } = req.body;
 
