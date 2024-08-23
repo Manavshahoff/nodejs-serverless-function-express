@@ -8,7 +8,7 @@ app.use(express.urlencoded({ extended: true }));
 
 
 const corsOptions = {
-  origin: 'https://Manavshahoff.github.io', // Replace with your GitHub Pages URL
+  origin: '*', // Replace with your GitHub Pages URL
   optionsSuccessStatus: 200
 };
 
@@ -19,7 +19,7 @@ app.get('/api/index', (req, res) => {
 });
 
 
-app.post("/", async (req, res) => {
+app.post("/api/", async (req, res) => {
   const { email, password } = req.body;
 
   try {
@@ -55,7 +55,7 @@ app.post("/api/signup", async (req, res) => {
   }
 });
 
-app.post("/addFriend", async (req, res) => {
+app.post("/api/addFriend", async (req, res) => {
   const { userEmail, friendName, friendNumber, friendEmail } = req.body;
   console.log("Received add friend request:", req.body);
 
@@ -87,7 +87,7 @@ app.post("/addFriend", async (req, res) => {
   }
 });
 
-app.post("/getFriends", async (req, res) => {
+app.post("/api/getFriends", async (req, res) => {
   const { email } = req.body;
 
   try {
@@ -99,7 +99,7 @@ app.post("/getFriends", async (req, res) => {
   }
 });
 
-app.post("/createGroup", async (req, res) => {
+app.post("/api/createGroup", async (req, res) => {
   const { groupName, email } = req.body;
 
   try {
@@ -118,7 +118,7 @@ app.post("/createGroup", async (req, res) => {
   }
 });
 
-app.post("/addMemberToGroup", async (req, res) => {
+app.post("/api/addMemberToGroup", async (req, res) => {
   const { userEmail, groupName, memberEmail } = req.body;
 
   try {
