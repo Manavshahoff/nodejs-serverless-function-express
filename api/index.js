@@ -8,8 +8,10 @@ app.use(express.urlencoded({ extended: true }));
 
 
 const corsOptions = {
-  origin: '*', // Replace with your GitHub Pages URL
-  optionsSuccessStatus: 200
+  origin: 'https://manavshahoff.github.io', // Replace with your GitHub Pages URL
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  credentials: true,
+  optionsSuccessStatus: 200,
 };
 
 app.use(cors(corsOptions));
