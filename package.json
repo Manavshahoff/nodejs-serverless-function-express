@@ -2,11 +2,11 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",  // Use 'index.js' if that's your main file in the 'api' folder
+  "main": "index.js", 
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon api/index.js",  // Updated to point to your entry file in 'api'
-    "build": "tsc"  // If you have TypeScript files that need to be compiled
+    "start": "nodemon api/index.js",  
+    "build": "tsc"  
   },
   "keywords": [],
   "author": "",
