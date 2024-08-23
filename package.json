@@ -1,7 +1,25 @@
 {
-  "repository": "https://github.com/vercel/examples.git",
-  "license": "MIT",
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",  // Use 'index.js' if that's your main file in the 'api' folder
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon api/index.js",  // Updated to point to your entry file in 'api'
+    "build": "tsc"  // If you have TypeScript files that need to be compiled
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "private": true,
+  "repository": "https://github.com/vercel/examples.git",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.5.0",
+    "nodemon": "^3.1.0"
+  },
   "devDependencies": {
     "@types/node": "^17.0.42",
     "@vercel/node": "^2.9.6",
