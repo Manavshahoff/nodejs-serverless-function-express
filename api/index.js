@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-const { User, Group, Expense } = require("./Mongo");
+const {User, Group, Expense} = require('./Mongo');
 const app = express();
 
 app.use(express.json());
