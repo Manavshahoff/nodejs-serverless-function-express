@@ -5,12 +5,14 @@ const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors());
+
 
 const corsOptions = {
   origin: 'https://Manavshahoff.github.io', // Replace with your GitHub Pages URL
   optionsSuccessStatus: 200
 };
+
+app.use(cors(corsOptions));
 
 app.get('/api/index', (req, res) => {
   res.send('Hello there');
