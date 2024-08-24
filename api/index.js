@@ -38,7 +38,7 @@ app.post("/api/", async (req, res) => {
   }
 });
 
-app.post("/signup", async (req, res) => {
+app.post("/api/signup", async (req, res) => {
   const { name, email, password } = req.body;
 
   try {
