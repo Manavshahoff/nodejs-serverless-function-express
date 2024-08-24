@@ -38,7 +38,7 @@ app.post("/api/", async (req, res) => {
   }
 });
 
-app.post("/signup", async (req, res) => {
+app.post("/api/signup", async (req, res) => {
   const { name, email, password } = req.body;
 
   try {
@@ -160,7 +160,7 @@ app.post("/api/addMemberToGroup", async (req, res) => {
   }
 });
 
-app.post("/getGroups", async (req, res) => {
+app.post("/api/getGroups", async (req, res) => {
   const { email } = req.body;
 
   try {
@@ -172,7 +172,7 @@ app.post("/getGroups", async (req, res) => {
   }
 });
 
-app.post("/addExpense", async (req, res) => {
+app.post("/api/addExpense", async (req, res) => {
   const { email, expenseName, amount, selectedFriends, selectedGroups, splitMethod, customShares } = req.body;
 
   try {

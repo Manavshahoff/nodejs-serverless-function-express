@@ -2,20 +2,20 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "api/index.js",
   "engines": {
     "node": "20.x"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon api/index.js",
-    "build": "echo 'No build step needed for backend code.'"
+    "start:prod": "node api/index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "private": true,
-  "repository": "https://github.com/vercel/examples.git",
+  "repository": "https://github.com/vercel/nodejs-serverless-function-express.git",
   "dependencies": {
     "bcrypt": "^5.1.1",
     "cors": "^2.8.5",
