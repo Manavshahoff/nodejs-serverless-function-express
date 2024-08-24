@@ -259,7 +259,7 @@ app.post("/api/addExpense", async (req, res) => {
 
 
 
-app.post("/getActivities", async (req, res) => {
+app.post("/api/getActivities", async (req, res) => {
   const { email } = req.body;
 
   try {
