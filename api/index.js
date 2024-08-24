@@ -16,7 +16,7 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
-app.get('/api/index', (req, res) => {
+app.get('/', (req, res) => {
   res.send('Hello there');
 });
 
