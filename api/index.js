@@ -302,6 +302,50 @@ app.post("/api/getActivities", async (req, res) => {
   }
 });
 
+app.post("/api/settleUp", async (req, res) => {
+  const { userEmail, friendEmail } = req.body;
+
+  try {
+    const user = await User.findOne({ email: userEmail });
+    const friend = await User.findOne({ email: friendEmail });
+
+    if (!user || !friend) {
+      return res.json("user_or_friend_not_found");
+    }
+
+    const userFriend = user.friends.find(f => f.email === friendEmail);
+    const friendOfUser = friend.friends.find(f => f.email === userEmail);
+
+    if (!userFriend || !friendOfUser) {
+      return res.json("friend_relationship_not_found");
+    }
+
+    // Settle up the balances
+    const userBalance = userFriend.balance;
+    const friendBalance = friendOfUser.balance;
+
+    // Settle balances
+    userFriend.balance = 0;
+    friendOfUser.balance = 0;
+
+    // Save the updated balances
+    await User.updateOne(
+      { email: userEmail, "friends.email": friendEmail },
+      { $set: { "friends.$.balance": userFriend.balance } }
+    );
+    await User.updateOne(
+      { email: friendEmail, "friends.email": userEmail },
+      { $set: { "friends.$.balance": friendOfUser.balance } }
+    );
+
+    res.json("success");
+  } catch (error) {
+    console.error("Error settling up balance:", error);
+    res.json("error");
+  }
+});
+
+
 
 
 const port = process.env.PORT || 5000;
