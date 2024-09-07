@@ -8,7 +8,8 @@ app.use(express.urlencoded({ extended: true }));
 
 
 const corsOptions = {
-  origin: 'https://manavshahoff.github.io', // Replace with your GitHub Pages URL
+  // origin: 'https://manavshahoff.github.io',
+  origin: 'http://localhost:3000',
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   credentials: true,
   optionsSuccessStatus: 200,
